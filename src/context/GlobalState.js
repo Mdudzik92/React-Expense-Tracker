@@ -32,11 +32,19 @@ export const GlobalProvider = ({ children }) => {
     });
   }
 
+  function addTransaction(transaction) {
+    dispatch({
+      type: 'ADD_TRANSACTION',
+      payload: transaction
+    });
+  }
+
 
   // What the provider does is it provides our state, and provides any actions to the components that it's wrapped around
   return (<GlobalContext.Provider value={{
     transactions: state.transactions,
-    deleteTransaction
+    deleteTransaction,
+    addTransaction
   }}>
     {children}
   </GlobalContext.Provider>)

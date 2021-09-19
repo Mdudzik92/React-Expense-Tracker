@@ -5,6 +5,12 @@ export default (state, action) => {
         ...state,
         transactions: state.transactions.filter(transaction => transaction.id != action.payload)
       }
+      case 'ADD_TRANSACTION':
+        return {
+          ...state,
+          // Returning transactions that are already there in addition to the new one which is already in the payload. In this case action.payload is the new transaction
+          transactions: [action.payload, ...state.transactions]
+        }
     default: 
       return state;
   }
