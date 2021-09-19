@@ -22,10 +22,21 @@ export const GlobalProvider = ({ children }) => {
   // Whenever we need to call a reducer action we need to use dispatch
   const [state, dispatch] = useReducer(AppReducer, initialState);
 
+  // Actions that make calls to the reducer
+  function deleteTransaction(id) {
+    // Dispatching an object to our reducer. An action with a type and a payload
+    dispatch({
+      type: 'DELETE_TRANSACTION',
+      // payload is any data we want to send to it
+      payload: id
+    });
+  }
+
 
   // What the provider does is it provides our state, and provides any actions to the components that it's wrapped around
   return (<GlobalContext.Provider value={{
-    transactions: state.transactions
+    transactions: state.transactions,
+    deleteTransaction
   }}>
     {children}
   </GlobalContext.Provider>)
