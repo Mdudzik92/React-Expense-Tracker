@@ -5,7 +5,7 @@ React Expense Tracker App
 <!-- Live link to deployed app -->
 
 Repository: https://github.com/Mdudzik92/React-Expense-Tracker<br>
-Deployed app: https://dudzik-react-task.herokuapp.com/
+Deployed app: https://dudzik-react-expense-tracker.herokuapp.com/
 
 <!-- Technologies used -->
 
